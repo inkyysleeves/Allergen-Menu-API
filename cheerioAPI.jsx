@@ -1,12 +1,17 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.post('/fetch-menu-items', (req, res) => {
-  const url = req.body.url;
+   const url = req.body.urltoscan;
+  // console.log(req.body.urltoscan);
+  // const url = 'https://zoukteabar.co.uk/menus/manchester/';
+
 
   fetch(`${url}`)
     .then(page => page.text())
