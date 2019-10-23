@@ -14,7 +14,7 @@ app.post('/fetch-menu-items', (req, res) => {
 
 
   fetch(`${url}`)
-    .then(page => page.text())
+    .then(page => page.text()) 
     .then(body => {
       const menuItems = [];
       const $ = cheerio.load(body);
