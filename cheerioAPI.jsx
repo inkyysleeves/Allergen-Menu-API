@@ -19,9 +19,10 @@ app.post('/fetch-menu-items', (req, res) => {
       const menuItems = [];
       const $ = cheerio.load(body);
       $('.menu-item').each(function fn() {
+        const _id = new Date().getTime()+Math.floor(Math.random()*100000);
         const dish = $(this).find('h4').text();
         const ingredients = $(this).find('p').text();
-        menuItems.push({ dish, ingredients });
+        menuItems.push({_id, dish, ingredients });
       });
       // filtering logic, do other smarts before responding back to client
       res.send(menuItems);
