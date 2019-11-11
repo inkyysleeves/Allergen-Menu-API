@@ -26,6 +26,6 @@ app.post('/fetch-menu-items', (req, res) => {
     });
 });
 
-app.listen(3001);
+app.listen(process.env.PORT || 3001);
 
 module.exports = app;

@@ -2,9 +2,9 @@
   "name": "allergen-menu-api",
   "version": "1.0.0",
   "description": "",
-  "main": "cheerioAPI.jsx",
+  "main": "./cheerioAPI.js",
   "scripts":{
-    "start": "cheerioAPI.jsx"
+    "start": "./cheerioAPI.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
