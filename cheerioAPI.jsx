@@ -9,8 +9,6 @@ app.use(cors());
 
 app.post('/fetch-menu-items', (req, res) => {
    const url = req.body.urltoscan;
-  // console.log(req.body.urltoscan);
-  // const url = 'https://zoukteabar.co.uk/menus/manchester/';
 
 
   fetch(`${url}`)
@@ -24,7 +22,6 @@ app.post('/fetch-menu-items', (req, res) => {
         const ingredients = $(this).find('p').text();
         menuItems.push({_id, dish, ingredients });
       });
-      // filtering logic, do other smarts before responding back to client
       res.send(menuItems);
     });
 });
