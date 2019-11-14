@@ -1,5 +1,3 @@
-const fetch = require('node-fetch');
-const cheerio = require('cheerio');
 const express = require('express');
 const cors = require('cors');
 const puppeteer = require("puppeteer");
@@ -9,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.post('/fetch-menu-items', (req, res) => {
-   const url = "https://www.just-eat.co.uk/restaurants-milano-pizza-new-bow/menu";
+   const url = req.body.urltoscan;
    (async () => {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
